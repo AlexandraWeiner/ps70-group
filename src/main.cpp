@@ -11,7 +11,7 @@
 #include "addons/RTDBHelper.h"
 
 #define LED_PIN     19
-#define NUM_LEDS    10
+#define NUM_LEDS    120
 #define BRIGHTNESS  64
 #define LED_TYPE    WS2811
 #define COLOR_ORDER GRB

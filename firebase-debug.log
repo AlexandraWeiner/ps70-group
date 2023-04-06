@@ -1,0 +1,82 @@
+[debug] [2023-04-06T02:27:09.851Z] ----------------------------------------------------------------------
+[debug] [2023-04-06T02:27:09.852Z] Command:       /Users/alweiner/Library/Application Support/fnm/node-versions/v18.12.1/installation/bin/node /opt/homebrew/bin/firebase emulators:start
+[debug] [2023-04-06T02:27:09.852Z] CLI Version:   11.25.2
+[debug] [2023-04-06T02:27:09.852Z] Platform:      darwin
+[debug] [2023-04-06T02:27:09.852Z] Node Version:  v18.12.1
+[debug] [2023-04-06T02:27:09.853Z] Time:          Wed Apr 05 2023 22:27:09 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-04-06T02:27:09.853Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-06T02:27:09.886Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-06T02:27:09.886Z] > authorizing via signed-in user (alexandra.weiner1@gmail.com)
+[debug] [2023-04-06T02:27:09.924Z] java version "20" 2023-03-21
+Java(TM) SE Runtime Environment (build 20+36-2344)
+
+[debug] [2023-04-06T02:27:09.925Z] Java HotSpot(TM) 64-Bit Server VM (build 20+36-2344, mixed mode, sharing)
+
+[debug] [2023-04-06T02:27:09.927Z] Parsed Java major version: 20
+[info] i  emulators: Starting emulators: database, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: database, hosting"}}
+[debug] [2023-04-06T02:27:10.218Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-06T02:27:10.219Z] [database] Database Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2023-04-06T02:27:10.219Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-06T02:27:10.219Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"database":[{"address":"127.0.0.1","family":"IPv4","port":9000}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-04-06T02:27:10.222Z] [hub] writing locator at /var/folders/k6/qz3dhtfn54bbmmp0zfvqcvg00000gq/T/hub-ps70-d90a6.json
+[debug] [2023-04-06T02:27:10.228Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 [none]
+[debug] [2023-04-06T02:27:10.640Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 200
+[debug] [2023-04-06T02:27:10.641Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 {"projectId":"ps70-d90a6","projectNumber":"680150897899","displayName":"ps70","name":"projects/ps70-d90a6","resources":{"hostingSite":"ps70-d90a6","realtimeDatabaseInstance":"ps70-d90a6-default-rtdb"},"state":"ACTIVE","etag":"1_cd8d276e-1cd0-485a-99c7-cd805962a83e"}
+[debug] [2023-04-06T02:27:10.641Z] database rules config:  [{"instance":"ps70-d90a6-default-rtdb","rules":"/Users/alweiner/Documents/PlatformIO/Projects/ps70-group/database.rules.json"}]
+[debug] [2023-04-06T02:27:10.644Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2023-04-06T02:27:10.644Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-06T02:27:10.644Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2023-04-06T02:27:10.644Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/alweiner/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar","--host","127.0.0.1","--port",9000,"--single_project_mode","Warning"],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/Users/alweiner/.cache/firebase/emulators/firebase-database-emulator-v4.11.0.jar\",\"--host\",\"127.0.0.1\",\"--port\",9000,\"--single_project_mode\",\"Warning\"],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2023-04-06T02:27:11.190Z] 22:27:11.189 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"22:27:11.189 [NamespaceSystem-akka.actor.default-dispatcher-4] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2023-04-06T02:27:11.276Z] 22:27:11.276 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"22:27:11.276 [main] INFO com.firebase.server.forge.App$ - Listening at 127.0.0.1:9000\n"}}
+[debug] [2023-04-06T02:27:11.417Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/ps70-d90a6/sites 
+[debug] [2023-04-06T02:27:11.898Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/ps70-d90a6/sites 200
+[debug] [2023-04-06T02:27:11.898Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/ps70-d90a6/sites {"sites":[{"name":"projects/ps70-d90a6/sites/ps70-d90a6","defaultUrl":"https://ps70-d90a6.web.app","appId":"1:680150897899:web:46ce5741a8bbf97cdbdaae","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-06T02:27:11.898Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6/webApps/1:680150897899:web:46ce5741a8bbf97cdbdaae/config [none]
+[debug] [2023-04-06T02:27:12.576Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6/webApps/1:680150897899:web:46ce5741a8bbf97cdbdaae/config 200
+[debug] [2023-04-06T02:27:12.577Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6/webApps/1:680150897899:web:46ce5741a8bbf97cdbdaae/config {"projectId":"ps70-d90a6","appId":"1:680150897899:web:46ce5741a8bbf97cdbdaae","databaseURL":"https://ps70-d90a6-default-rtdb.firebaseio.com","storageBucket":"ps70-d90a6.appspot.com","apiKey":"AIzaSyCtkC6xAis3Gw6N_ADcXDwp6OIQ-i1JkzM","authDomain":"ps70-d90a6.firebaseapp.com","messagingSenderId":"680150897899","measurementId":"G-MPLMY89F35"}
+[debug] [2023-04-06T02:27:12.606Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 [none]
+[debug] [2023-04-06T02:27:12.986Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 200
+[debug] [2023-04-06T02:27:12.986Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/ps70-d90a6 {"projectId":"ps70-d90a6","projectNumber":"680150897899","displayName":"ps70","name":"projects/ps70-d90a6","resources":{"hostingSite":"ps70-d90a6","realtimeDatabaseInstance":"ps70-d90a6-default-rtdb"},"state":"ACTIVE","etag":"1_cd8d276e-1cd0-485a-99c7-cd805962a83e"}
+[info] i  hosting[ps70-d90a6]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting[ps70-d90a6]: Local server: http://127.0.0.1:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5002\u001b[22m\u001b[24m"}}
+[debug] [2023-04-06T02:27:13.041Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-06T02:27:13.041Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-06T02:27:13.041Z] Starting Emulator UI with command {"binary":"node","args":["/Users/alweiner/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/alweiner/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-04-06T02:27:13.107Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-04-06T02:27:13.108Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[debug] [2023-04-06T02:27:13.302Z] >>> [apiv2][query] PUT http://127.0.0.1:9000/.settings/rules.json ns=ps70-d90a6-default-rtdb
+[debug] [2023-04-06T02:27:13.302Z] >>> [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json "{\n  \"rules\": {\n    \".read\": \"now < 1682740800000\",  // 2023-4-29\n    \".write\": \"now < 1682740800000\",  // 2023-4-29\n  }\n}"
+[debug] [2023-04-06T02:27:13.462Z] 22:27:13.462 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - ps70-d90a6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 72ms, init: 0ms
+ {"metadata":{"emulator":{"name":"database"},"message":"22:27:13.462 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO com.firebase.core.namespace.NamespaceActor - ps70-d90a6-default-rtdb successfully activated FBKV (SurveyIdle(0)) wait: 72ms, init: 0ms\n"}}
+[debug] [2023-04-06T02:27:13.499Z] 22:27:13.499 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace ps70-d90a6-default-rtdb status Active to Active
+ {"metadata":{"emulator":{"name":"database"},"message":"22:27:13.499 [NamespaceSystem-blocking-namespace-operation-dispatcher-6] INFO com.firebase.core.namespace.StateManager - Namespace ps70-d90a6-default-rtdb status Active to Active\n"}}
+[debug] [2023-04-06T02:27:13.517Z] <<< [apiv2][status] PUT http://127.0.0.1:9000/.settings/rules.json 200
+[debug] [2023-04-06T02:27:13.517Z] <<< [apiv2][body] PUT http://127.0.0.1:9000/.settings/rules.json {"status":"ok"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┬────────────────────────────────┐
+│ Emulator │ Host:Port      │ View in Emulator UI            │
+├──────────┼────────────────┼────────────────────────────────┤
+│ Database │ 127.0.0.1:9000 │ http://127.0.0.1:4000/database │
+├──────────┼────────────────┼────────────────────────────────┤
+│ Hosting  │ 127.0.0.1:5002 │ n/a                            │
+└──────────┴────────────────┴────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [06/Apr/2023:02:27:16 +0000] "GET / HTTP/1.1" 200 - "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [06/Apr/2023:02:27:16 +0000] \"GET / HTTP/1.1\" 200 - \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36\""}}

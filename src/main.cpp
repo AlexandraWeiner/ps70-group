@@ -17,6 +17,7 @@
 #define COLOR_ORDER GRB
 #define API_KEY "AIzaSyCtkC6xAis3Gw6N_ADcXDwp6OIQ-i1JkzM"
 #define DATABASE_URL "https://ps70-d90a6-default-rtdb.firebaseio.com"
+#define FIREBASE_UPDATE_DELAY 2000
 
 
 CRGB leds[NUM_LEDS];
@@ -45,8 +46,8 @@ CRGB leds[NUM_LEDS];
 CRGBPalette16 currentPalette;
 TBlendType    currentBlending;
 
-const char* ssid = "iPhone (188)";
-const char* password =  "thereitis";
+const char* ssid = "MAKERSPACE";
+const char* password =  "12345678";
 
 extern CRGBPalette16 myRedWhiteBluePalette;
 extern const TProgmemPalette16 myRedWhiteBluePalette_p PROGMEM;
@@ -64,7 +65,7 @@ bool signupOK = false;
 void setup() {
     delay( 3000 ); // power-up safety delay
     FastLED.addLeds<LED_TYPE, LED_PIN, COLOR_ORDER>(leds, NUM_LEDS).setCorrection( TypicalLEDStrip );
-    FastLED.setBrightness(  BRIGHTNESS );
+    FastLED.setBrightness(BRIGHTNESS);
 
     Serial.begin(115200);
     WiFi.begin(ssid, password);
@@ -209,43 +210,41 @@ void ChangePalettePeriodically()
 
 void loop()
 {
+  ChangePalettePeriodically();
 
-    ChangePalettePeriodically();
-    
-    static uint8_t startIndex = 0;
-    startIndex = startIndex + 1; /* motion speed */
-    
-    FillLEDsFromPaletteColors( startIndex);
-    
-    FastLED.show();
-    FastLED.delay(1000 / UPDATES_PER_SECOND);
+  static uint8_t startIndex = 0;
+  startIndex = startIndex + 1; /* motion speed */
+  
+  FillLEDsFromPaletteColors(startIndex);
+  
+  FastLED.delay(1000 / UPDATES_PER_SECOND);
 
-    if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > 15000 || sendDataPrevMillis == 0)){
-      sendDataPrevMillis = millis();
-      // Write an Int number on the database path test/int
-      if (Firebase.RTDB.setInt(&fbdo, "test/int", count)){
-        Serial.println("PASSED; dataPath; dataType");
-        Serial.println(fbdo.dataPath());
+  if (Firebase.ready() && signupOK && (millis() - sendDataPrevMillis > FIREBASE_UPDATE_DELAY || sendDataPrevMillis == 0)){
+    sendDataPrevMillis = millis();
+    // read the int from firebase
+    if (Firebase.RTDB.getBool(&fbdo, "ledState")){
+      // check data type
+      if (fbdo.dataType() == "boolean"){
+        // get value
+        bool state = fbdo.boolData();
+        if (state == 1){
+          // if on, change periodically
+          Serial.println("Turning on LED");
+          FastLED.setBrightness(BRIGHTNESS);
+        } else {
+          // if off, turn off lights
+          Serial.println("Turning off LED");
+          FastLED.setBrightness(0);
+        }
+      } else {
+        // different data type than expected, print the data type
         Serial.println(fbdo.dataType());
       }
-      else {
-        Serial.println("FAILED; errorReason");
-        Serial.println(fbdo.errorReason());
-      }
-      count++;
-      
-      // Write an Float number on the database path test/float
-      if (Firebase.RTDB.setFloat(&fbdo, "test/float", 0.01 + random(0,100))){
-        Serial.println("PASSED; path; type");
-        Serial.println(fbdo.dataPath());
-        Serial.println(fbdo.dataType());
-      }
-      else {
-        Serial.println("FAILED; errorReason");
-        Serial.println(fbdo.errorReason());
-      }
+    } else {
+      // error, print the error
+       Serial.println(fbdo.errorReason());
+    }
   }
-
 }
 
 
